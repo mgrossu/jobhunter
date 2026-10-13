@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Keeps an MLX OpenAI-compatible server running on the Mac.
+  cp deploy/mac/com.jobhunter.mlx-server.plist ~/Library/LaunchAgents/ && launchctl load ~/Library/LaunchAgents/com.jobhunter.mlx-server.plist
+  Host 127.0.0.1 is enough when the container runs on this Mac (Docker Desktop). If the container
+  runs on another machine, change it to this Mac's LAN IP. mlx_lm.server has no authentication,
+  so only expose it on a trusted network.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.jobhunter.mlx-server</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string><string>-lc</string>
+    <string>exec mlx_lm.server --model mlx-community/Qwen3-30B-A3B-Instruct-2507-4bit --host 127.0.0.1 --port 8080</string>
+  </array>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>StandardOutPath</key><string>/tmp/mlx-server.log</string>
+  <key>StandardErrorPath</key><string>/tmp/mlx-server.log</string>
+</dict>
+</plist>

@@ -1,0 +1,19 @@
+{
+  "providers": {
+    "mac-mlx": {
+      "baseUrl": "http://127.0.0.1:8080/v1",
+      "api": "openai-completions",
+      "apiKey": "local",
+      "models": [
+        {
+          "id": "mlx-community/Qwen3-30B-A3B-Instruct-2507-4bit",
+          "name": "Qwen3 30B-A3B Instruct (Mac MLX)",
+          "reasoning": false,
+          "contextWindow": 32768,
+          "maxTokens": 4096,
+          "compat": { "maxTokensField": "max_tokens", "supportsDeveloperRole": false, "supportsStore": false, "supportsReasoningEffort": false }
+        }
+      ]
+    }
+  }
+}

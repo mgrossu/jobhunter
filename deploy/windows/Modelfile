@@ -1,0 +1,6 @@
+# Ollama defaults to a 4k context on machines without a big GPU, which would silently cut the
+# CV + posting prompt. This wraps the model with a 16k context under a name without a colon.
+#   ollama create jobhunter-qwen -f deploy\windows\Modelfile
+FROM qwen3:30b-a3b-instruct-2507-q4_K_M
+PARAMETER num_ctx 16384
+PARAMETER temperature 0.3

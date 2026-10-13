@@ -1,0 +1,141 @@
+{
+  "threshold": 90,
+  "nearMiss": 80,
+  "defaultProfile": "nuc-ollama",
+  "profiles": {
+    "nuc-ollama": {
+      "provider": "ollama",
+      "model": "jobhunter-qwen",
+      "thinkingScore": "off",
+      "thinkingTailor": "off",
+      "timeoutMinutes": 25,
+      "contextTokens": 16384
+    },
+    "mac-mlx": {
+      "provider": "mac-mlx",
+      "model": "mlx-community/Qwen3-30B-A3B-Instruct-2507-4bit",
+      "thinkingScore": "off",
+      "thinkingTailor": "off",
+      "timeoutMinutes": 10,
+      "contextTokens": 32768,
+      "limits": {
+        "maxNewJobsPerRun": 150,
+        "maxTailoredPerRun": 20
+      }
+    }
+  },
+  "limits": {
+    "maxNewJobsPerRun": 60,
+    "maxRuntimeMinutes": 390,
+    "detailDelayMs": 2500,
+    "maxDescriptionChars": 12000,
+    "maxTailoredPerRun": 8
+  },
+  "searches": [
+    {
+      "source": "linkedin",
+      "keywords": "IT project manager",
+      "location": "Prague",
+      "contract": true,
+      "maxAgeDays": 7
+    },
+    {
+      "source": "linkedin",
+      "keywords": "program manager",
+      "location": "Prague",
+      "contract": true,
+      "maxAgeDays": 7
+    },
+    {
+      "source": "linkedin",
+      "keywords": "delivery manager",
+      "location": "Prague",
+      "contract": true,
+      "maxAgeDays": 7
+    },
+    {
+      "source": "linkedin",
+      "keywords": "IT project manager",
+      "location": "European Union",
+      "contract": true,
+      "remote": true,
+      "maxAgeDays": 7
+    },
+    {
+      "source": "linkedin",
+      "keywords": "technical project manager",
+      "location": "European Union",
+      "contract": true,
+      "remote": true,
+      "maxAgeDays": 7
+    },
+    {
+      "source": "linkedin",
+      "keywords": "PMO consultant",
+      "location": "European Union",
+      "contract": true,
+      "remote": true,
+      "maxAgeDays": 7
+    },
+    {
+      "source": "jobscz",
+      "keywords": "IT project manager",
+      "location": "praha"
+    },
+    {
+      "source": "jobscz",
+      "keywords": "projektový manažer IT",
+      "location": "praha"
+    },
+    {
+      "source": "freelancermap",
+      "keywords": "project manager",
+      "remote": true
+    },
+    {
+      "source": "himalayas",
+      "keywords": "project manager",
+      "contract": true
+    },
+    {
+      "source": "jobicy",
+      "keywords": "project manager",
+      "location": "europe"
+    }
+  ],
+  "titleInclude": [
+    "project\\s*manag",
+    "program(me)?\\s*manag",
+    "delivery\\s*(manager|lead)",
+    "\\bpmo\\b",
+    "project\\s*lead",
+    "projekt\\w*\\s*manaž",
+    "projektov",
+    "projektmanag",
+    "\\bit\\s*manager",
+    "transformation\\s*(manager|lead)",
+    "implementation\\s*manager",
+    "release\\s*manager",
+    "engagement\\s*manager"
+  ],
+  "titleExclude": [
+    "\\bjunior\\b",
+    "\\bintern(ship)?\\b",
+    "trainee",
+    "construction",
+    "civil",
+    "high[- ]voltage",
+    "substation",
+    "marketing",
+    "sales",
+    "event",
+    "stavb",
+    "\\bhr\\b",
+    "recruit",
+    "clinical",
+    "architektur"
+  ],
+  "notify": {
+    "ntfyUrl": null
+  }
+}

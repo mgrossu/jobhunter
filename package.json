@@ -1,0 +1,49 @@
+{
+  "name": "jobhunter-pi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Overnight IT PM contract job search with pi on a local model (Ollama, MLX or any OpenAI-compatible server): fetch, score against your CV, tailor CV, morning report, confirm-then-apply.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "pi-package"
+  ],
+  "engines": {
+    "node": ">=22.18"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions"
+    ],
+    "prompts": [
+      "./prompts"
+    ],
+    "skills": [
+      "./skills"
+    ]
+  },
+  "scripts": {
+    "nightly": "node src/nightly.ts",
+    "schedule": "node src/schedule.ts",
+    "doctor": "node src/doctor.ts",
+    "fetch": "node src/cli.ts fetch",
+    "report": "node src/cli.ts report",
+    "status": "node src/cli.ts status",
+    "test": "node --test test/*.test.ts"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-coding-agent": {
+      "optional": true
+    },
+    "typebox": {
+      "optional": true
+    }
+  }
+}

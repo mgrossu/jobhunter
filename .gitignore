@@ -1,0 +1,8 @@
+node_modules/
+# Personal data and pipeline state never leave this machine
+data/*
+!data/README.md
+.jobhunter/
+out/
+reports/
+logs/

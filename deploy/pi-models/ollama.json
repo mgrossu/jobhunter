@@ -1,0 +1,19 @@
+{
+  "providers": {
+    "ollama": {
+      "baseUrl": "http://127.0.0.1:11434/v1",
+      "api": "openai-completions",
+      "apiKey": "ollama",
+      "models": [
+        {
+          "id": "jobhunter-qwen",
+          "name": "Qwen3 30B-A3B Instruct (Ollama, 16k ctx)",
+          "reasoning": false,
+          "contextWindow": 16384,
+          "maxTokens": 4096,
+          "compat": { "maxTokensField": "max_tokens", "supportsDeveloperRole": false, "supportsStore": false, "supportsReasoningEffort": false }
+        }
+      ]
+    }
+  }
+}

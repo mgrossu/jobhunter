@@ -1,0 +1,21 @@
+{
+  "name": "Alex Example",
+  "headline": "Senior IT Project Manager",
+  "contact": { "email": "alex@example.com", "location": "Prague, CZ" },
+  "summary": "IT project manager with 12 years delivering ERP and cloud programmes for banking and pharma clients across the EU.",
+  "skills": ["Scrum", "PRINCE2", "SAP S/4HANA", "Jira", "Stakeholder management", "Budget control", "Vendor management", "Azure"],
+  "experience": [
+    { "id": "e1", "company": "Contoso Pharma", "role": "IT Project Manager", "start": "2022", "end": "present", "engagement": "B2B contract",
+      "bullets": [
+        { "id": "e1.b1", "text": "Led SAP S/4HANA rollout across 6 countries with a 3.2 MEUR budget." },
+        { "id": "e1.b2", "text": "Managed 4 vendors and a team of 25 using Scrum and Jira." }
+      ] },
+    { "id": "e2", "company": "Fabrikam Bank", "role": "Project Manager", "start": "2016", "end": "2022", "engagement": "Employee",
+      "bullets": [
+        { "id": "e2.b1", "text": "Delivered core banking migration to Azure on time and 5% under budget." }
+      ] }
+  ],
+  "education": [{ "institution": "Czech Technical University", "degree": "MSc Informatics", "year": "2013" }],
+  "certifications": ["PRINCE2 Practitioner", "PSM I"],
+  "languages": [{ "language": "English", "level": "C2" }, { "language": "Czech", "level": "C1" }]
+}

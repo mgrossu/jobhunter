@@ -1,0 +1,25 @@
+# Linux container runner. The model server runs elsewhere (default: the Mac's MLX server).
+#   docker compose up -d --build          # nightly at JH_RUN_AT
+#   docker compose run --rm jobhunter npm run doctor
+#   docker compose run --rm -it jobhunter pi      # then /jh-setup or /jh-review
+services:
+  jobhunter:
+    build:
+      context: .
+      dockerfile: deploy/docker/Dockerfile
+    environment:
+      JH_PROFILE: mac-mlx
+      # Same Mac as Docker Desktop: host.docker.internal. Another machine: http://<mac-lan-ip>:8080/v1
+      JH_LLM_BASE_URL: http://host.docker.internal:8080/v1
+      JH_RUN_AT: "00:30"
+      TZ: Europe/Prague
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./config:/app/config
+      - ./data:/app/data
+      - ./.jobhunter:/app/.jobhunter
+      - ./out:/app/out
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+    restart: unless-stopped
